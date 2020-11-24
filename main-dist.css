@@ -6,7 +6,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Barlow:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -389,7 +388,7 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  font-family: "orangejuice";
+  font-family: "Gotham Pro";
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -408,7 +407,7 @@ body.lock {
 input,
 button,
 textarea {
-  font-family: "orangejuice";
+  font-family: "Gotham Pro";
 }
 
 input::-ms-clear {
@@ -452,9 +451,16 @@ h6 {
 }
 
 @font-face {
-  font-family: "orangejuice";
-  src: url("fonts/orangejuice20.woff") format("woff"), url("fonts/orangejuice20.woff2") format("woff2");
+  font-family: "Gotham Pro";
+  src: local("fonts/Gotham Pro Regular"), local("Gotham-Pro-Regular"), url("fonts/GothamPro.woff2") format("woff2"), url("fonts/GothamPro.woff") format("woff"), url("fonts/GothamPro.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  display: swap;
+}
+@font-face {
+  font-family: "Gotham Pro";
+  src: local("fonts/Gotham Pro Bold"), local("Gotham-Pro-Bold"), url("fonts/GothamPro-Bold.woff2") format("woff2"), url("fonts/GothamPro-Bold.woff") format("woff"), url("fonts/GothamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   display: swap;
 }
