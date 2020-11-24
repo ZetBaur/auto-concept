@@ -3,15 +3,224 @@ $fontfamily: "Gotham Pro";
 // =============================================================================================================================================
 @import "_normalize.scss";
 @import "_null.scss";
+@import "_icomoon.scss";
 @import "_fonts.scss";
 @import "_global.scss";
-@import "_baguetteBox.scss";
-@import "_popover.min.scss";
-@import "_popup.scss";
-@import "_header.scss";
-@import "_footer.scss";
-@import "_forms.scss";
-@import "_ui.scss";
+
+// =============================================================================================================================================
+.menu-btn {
+    position: fixed;
+    background-color: #fff;
+    top: 80px;
+    left: 80px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+    z-index: 20;
+    span {
+        width: 30px;
+        height: 4px;
+        background-color: #000;
+        color: #000;
+    }
+    &:hover {
+        span {
+            &:nth-child(1) {
+                animation-name: line;
+                animation-duration: 1s;
+                @keyframes line {
+                    0% {
+                        width: 30px;
+                    }
+                    30% {
+                        width: 50px;
+                    }
+                    100% {
+                        width: 30px;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                animation-name: line-2;
+                animation-duration: 1s;
+                @keyframes line-2 {
+                    0% {
+                        width: 30px;
+                    }
+                    40% {
+                        width: 70px;
+                    }
+                    100% {
+                        width: 30px;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                animation-name: line-3;
+                animation-duration: 1s;
+                @keyframes line-3 {
+                    0% {
+                        width: 30px;
+                    }
+                    30% {
+                        width: 50px;
+                    }
+                    100% {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 27%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 12% 3% 5% 3%;
+    transform: translateX(-120%);
+
+    // .menu__list
+
+    &__list {
+    }
+
+    // .menu__item
+
+    &__item {
+        border-bottom: 2px solid hsl(0deg 0% 14%);
+        a {
+            display: block;
+            color: #fff;
+            padding: 25px 0;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: red;
+                width: 0;
+                height: 2px;
+                color: red;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+}
+
+// =============================================================================================================================================
+
+.logo {
+    position: fixed;
+    width: 200px;
+    top: 80px;
+    transform: translateX(-50%);
+    left: 50%;
+    color: #fff;
+    z-index: 10;
+}
+// =============================================================================================================================================
+
+.aside-nav {
+    position: fixed;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    // .aside-nav__link
+
+    &__link {
+        width: 20px;
+        height: 20px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        margin: 27px 0;
+        &:hover {
+            background-color: #fff;
+        }
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+
+// =============================================================================================================================================
+
+.promo {
+    // .promo__wrapper
+
+    &__wrapper {
+        background-image: url(/img/promo/promo-bg.jpg);
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    // .promo__content
+
+    &__content {
+        width: 35%;
+        height: 20%;
+    }
+
+    // .promo__title
+
+    &__title {
+        @include adaptiv-font(35, 24);
+        letter-spacing: 2px;
+        line-height: 45px;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .promo__text
+
+    &__text {
+        font-size: 20px;
+        @include adaptiv-font(20, 14);
+        margin: 0px 0px 40px 0px;
+        line-height: 35px;
+        text-align: left;
+    }
+
+    // .promo__btn
+
+    &__btn {
+    }
+
+    // .promo__btn-down
+
+    &__btn-down {
+        position: absolute;
+        right: 80px;
+        bottom: 80px;
+    }
+}
+
 // =============================================================================================================================================
 
 // =============================================================================================================================================
@@ -25,20 +234,5 @@ $fontfamily: "Gotham Pro";
 // =============================================================================================================================================
 
 // =============================================================================================================================================
-
-// =============================================================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @import "_medias.scss";
