@@ -21,11 +21,11 @@
 	</button>
 	<nav class="menu">
 		<ul class="menu__list">
-			<li class="menu__item"><a href="">promo</a></li>
-			<li class="menu__item"><a href="">models</a></li>
-			<li class="menu__item"><a href="">accessories</a></li>
-			<li class="menu__item"><a href="">novelty</a></li>
-			<li class="menu__item"><a href="">Join the Bentley Club</a></li>
+			<li class="menu__item"><a href="#block1">promo</a></li>
+			<li class="menu__item"><a href="#block2">models</a></li>
+			<li class="menu__item"><a href="#block3">accessories</a></li>
+			<li class="menu__item"><a href="#block4">novelty</a></li>
+			<li class="menu__item"><a href="#block5">Join the Bentley Club</a></li>
 		</ul>
 	</nav>
 	<!-- ====================================================== -->
@@ -33,17 +33,27 @@
 		<img src="/img/icons/logo.png" alt="">
 	</div>
 	<!-- ====================================================== -->
-<ul class="aside-nav">
-	<li class="aside-nav__link"><a href="#"></a></li>
-	<li class="aside-nav__link"><a href="#"></a></li>
-	<li class="aside-nav__link"><a href="#"></a></li>
-	<li class="aside-nav__link"><a href="#"></a></li>
-	<li class="aside-nav__link"><a href="#"></a></li>
-</ul>
+	<ul class="aside-nav">
+		<li class="aside-nav__link"><a href="#block1">
+			<span>promo</span>
+		</a></li>
+		<li class="aside-nav__link"><a href="#block2">
+			<span>models</span>
+		</a></li>
+		<li class="aside-nav__link"><a href="#block3">
+			<span>accessories</span>
+		</a></li>
+		<li class="aside-nav__link"><a href="#block4">
+			<span>novelty</span>
+		</a></li>
+		<li class="aside-nav__link"><a href="#block5">
+			<span>Club</span>
+		</a></li>
+	</ul>
 	<!-- ====================================================== -->
 	<div id="fullpage">
 		<!-- ====================================================== -->
-		<div class="section promo">
+		<div class="section promo" data-anchor="block1">
 			<div class="promo__wrapper wrapper">
 				<div class="promo__content">
 					<div class="promo__title title">
@@ -53,17 +63,64 @@
 						This success is confirmed five years later by the new Bentley Mulsanne Turbo and Bentley
 						Mulsanne Turbo R, which are recognized as the best sedans in their class in the world.
 					</div>
-					<button class="promo__btn btn"><span>read more</span></button>
+					<button class="promo__btn btn">read more</button>
 				</div>
-				<div class="promo__btn-down btn-down">
-
-				</div>
+				<a class="promo__btn-down btn-down" href="#block2">
+				</a>
 			</div>
 		</div>
 		<!-- ====================================================== -->
-		<div class="section">Some section</div>
-		<div class="section">Some section</div>
-		<div class="section">Some section</div>
+		<div class="section models" data-anchor="block2">
+			<div class="models__wrapper wrapper">
+				<div class="models__tabs tabs">
+						<div class="models__nav-title title">
+							models
+						</div>
+					<nav class="models__nav">
+					
+						<div class="models__nav-item tab-navitem active"><span>The Mulsanne Range</span> </div>
+						<div class="models__nav-item tab-navitem"><span>The Flying Spur Range</span> </div>
+						<div class="models__nav-item tab-navitem"><span>The New Continental Range</span> </div>
+					</nav>
+					<div class="models__content">
+						<div class="models__content-item tab-item active">
+							<div class="models__content-inner">
+								<div class="models__content-title title">Continental GT V8 S Convertible
+								</div>
+								<button class="models__content-btn btn">
+									Full specification
+								</button>
+							</div>
+						</div>
+						<div class="models__content-item tab-item">
+							<div class="models__content-inner">
+								<div class="models__content-title title">Continental GT V8 S Convertible
+								</div>
+								<button class="models__content-btn btn">
+									Full specification
+								</button>
+							</div>
+						</div>
+						<div class="models__content-item tab-item">
+							<div class="models__content-inner">
+								<div class="models__content-title title">Continental GT V8 S Convertible
+								</div>
+								<button class="models__content-btn btn">
+									Full specification
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="models__btn-down btn-down" href="#block3">
+				</a>
+
+			</div>
+		</div>
+		<div class="section" data-anchor="block3"></div>
+		<div class="section" data-anchor="block4"></div>
+		<div class="section" data-anchor="block5"></div>
+
 	</div>
 
 

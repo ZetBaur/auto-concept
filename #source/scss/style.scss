@@ -3,6 +3,8 @@ $fontfamily: "Gotham Pro";
 // =============================================================================================================================================
 @import "_normalize.scss";
 @import "_null.scss";
+@import "_ui.scss";
+
 @import "_icomoon.scss";
 @import "_fonts.scss";
 @import "_global.scss";
@@ -93,6 +95,10 @@ $fontfamily: "Gotham Pro";
     text-transform: uppercase;
     padding: 12% 3% 5% 3%;
     transform: translateX(-120%);
+    transition: all 0.5s;
+    &.open {
+        transform: translateX(0);
+    }
 
     // .menu__list
 
@@ -105,7 +111,6 @@ $fontfamily: "Gotham Pro";
         border-bottom: 2px solid hsl(0deg 0% 14%);
         a {
             display: block;
-            color: #fff;
             padding: 25px 0;
             position: relative;
             &:before {
@@ -143,10 +148,13 @@ $fontfamily: "Gotham Pro";
 
 .aside-nav {
     position: fixed;
-    right: 80px;
+    right: toVw(110px);
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    @include adaptiv-font(35, 14);
+    font-weight: 700;
+    text-transform: uppercase;
 
     // .aside-nav__link
 
@@ -156,6 +164,7 @@ $fontfamily: "Gotham Pro";
         border: 4px solid #fff;
         border-radius: 50%;
         margin: 27px 0;
+
         &:hover {
             background-color: #fff;
         }
@@ -163,6 +172,20 @@ $fontfamily: "Gotham Pro";
             width: 100%;
             height: 100%;
             display: block;
+            position: relative;
+            span {
+                position: absolute;
+                right: 100px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+            &:hover {
+                span {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
 }
@@ -174,6 +197,9 @@ $fontfamily: "Gotham Pro";
 
     &__wrapper {
         background-image: url(/img/promo/promo-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         flex-direction: column;
         justify-content: flex-end;
         position: relative;
@@ -189,18 +215,12 @@ $fontfamily: "Gotham Pro";
     // .promo__title
 
     &__title {
-        @include adaptiv-font(35, 24);
-        letter-spacing: 2px;
-        line-height: 45px;
-        text-align: left;
-        text-transform: uppercase;
         margin: 0px 0px 40px 0px;
     }
 
     // .promo__text
 
     &__text {
-        font-size: 20px;
         @include adaptiv-font(20, 14);
         margin: 0px 0px 40px 0px;
         line-height: 35px;
@@ -215,13 +235,152 @@ $fontfamily: "Gotham Pro";
     // .promo__btn-down
 
     &__btn-down {
-        position: absolute;
-        right: 80px;
-        bottom: 80px;
     }
 }
 
 // =============================================================================================================================================
+
+.models {
+    // .models__wrapper
+
+    &__wrapper {
+        background-image: url(img/models/bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    // .models__tabs
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // .models__nav
+
+    &__nav {
+        width: toVw(560px);
+        height: toVh(680px);
+        background-color: #fff;
+        padding: toVw(260px) toVw(80px) toVw(80px) toVw(80px);
+    }
+
+    // .models__nav-title
+
+    &__nav-title {
+        color: rgba(0, 0, 0, 0.7);
+        letter-spacing: toVw(2px);
+        text-align: left;
+        text-transform: uppercase;
+        position: absolute;
+        top: toVw(390px);
+        left: toVw(150px);
+        font-weight: 700;
+    }
+
+    // .models__nav-item
+
+    &__nav-item {
+        color: #4a4a4a;
+        font-weight: 700;
+        letter-spacing: toVw(.8px);
+        text-align: left;
+        text-transform: uppercase;
+        padding: toVh(25px) 0;
+        cursor: pointer;
+        border-bottom: 1px solid grey;
+        position: relative;
+        &.active{
+            span{
+                position: relative;
+
+                color: #fff;
+                z-index: 30;
+            }
+            &:before{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        &:hover {
+            span {
+                position: relative;
+                color: #fff;
+                z-index: 30;
+            }
+            &:before{
+                visibility: visible;
+                opacity: 1;
+                transition: all .5s;
+            }
+        }
+       
+        &:before {
+            content: "";
+            position: absolute;
+            left: toVw(-45px);
+            top: 0;
+            width: 125%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 20;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+    // .models__content
+
+    &__content {
+    }
+
+    // .models__content-item
+
+    &__content-item {
+        width: toVw(1280px);
+        height: toVh(600px);
+        transform: translateX(toVw(-80px));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: toVw(80px);
+
+        &:nth-child(1) {
+            background-image: url(img/models/1.jpg);
+        }
+        &:nth-child(2) {
+            background-image: url(img/models/2.jpg);
+        }
+        &:nth-child(3) {
+            background-image: url(img/models/3.jpg);
+        }
+    }
+
+    &__content-inner {
+        width: toVw(480px);
+        height: 100%;
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    // .models__content-title
+
+    &__content-title {
+        font-weight: 700;
+    }
+
+    // .models__content-btn
+
+    &__content-btn {
+    }
+    &__btn-down {
+    }
+}
 
 // =============================================================================================================================================
 

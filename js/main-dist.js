@@ -2,8 +2,6 @@
 
 
 
-
-
 $(document).ready(function() {
 		var w=$(window).outerWidth();
 		var h=$(window).outerHeight();
@@ -44,19 +42,23 @@ $('.wrapper').addClass('loaded');
 if(isMobile.iOS()){
 	var act="touchstart";
 }
+// ==================MENU=========================================================================
 
-$('.header-menu__icon').click(function(event) {
-	$(this).toggleClass('active');
-	$('.header-menu').toggleClass('active');
-	if($(this).hasClass('active')){
-		$('body').data('scroll',$(window).scrollTop());
-	}
-		$('body').toggleClass('lock');
-	if(!$(this).hasClass('active')){
-		$('body,html').scrollTop(parseInt($('body').data('scroll')));
+
+$('.menu-btn').on('click', function(){
+	$('.menu').toggleClass('open');
+});
+$('.menu-item').on('click', function(){
+	if($('.menu').hasClass('open')){
+		$('.menu').removeClass('open');
 	}
 });
-
+$('html, body').on('click', function(e){
+	if($('.menu').hasClass('open') && !$(e.target).is('.menu, .menu-btn')){
+		$('.menu').removeClass('open');
+	}
+});
+// =====================================================================================
 //ZOOM
 if($('.gallery').length>0){
 	baguetteBox.run('.gallery', {
@@ -186,15 +188,15 @@ $('#up').click(function(event) {
 	$('body,html').animate({scrollTop:0},300);
 });
 // =============================================================================
-$('body').on('click','.tab__navitem',function(event) {
+$('body').on('click','.tab-navitem',function(event) {
 			var eq=$(this).index();
 		if($(this).hasClass('parent')){
 			var eq=$(this).parent().index();
 		}
 	if(!$(this).hasClass('active')){
-			$(this).closest('.tabs').find('.tab__navitem').removeClass('active');
+			$(this).closest('.tabs').find('.tab-navitem').removeClass('active');
 			$(this).addClass('active');
-			$(this).closest('.tabs').find('.tab__item').removeClass('active').eq(eq).addClass('active');
+			$(this).closest('.tabs').find('.tab-item').removeClass('active').eq(eq).addClass('active');
 		if($(this).closest('.tabs').find('.slick-slider').length>0){
 			$(this).closest('.tabs').find('.slick-slider').slick('setPosition');
 		}

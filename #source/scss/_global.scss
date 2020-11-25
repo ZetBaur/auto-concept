@@ -4,7 +4,29 @@ $maxWidth: 1920;
 	$maxWidth: $maxWidth - 320;
 	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
-// @include adaptiv-font( , )
+// @include adaptiv-font( , );
+// ==============================================================================================================================================
+
+$width: 1920px;
+$height: 1080px;
+
+@function toVmax($px) {
+	@return $px/$width * 100vmax;
+}
+@function toVmin($px) {
+	@return $px/$height * 100vmin;
+}
+
+@function toVw($px) {
+	@return $px/$width * 100vw;
+}
+
+@function toVh($px) {
+	@return $px/$height * 100vh;
+}
+// width: toVm($px);
+// ==============================================================================================================================================
+
 // ==============================================================================================================================================
 
 html,
@@ -15,22 +37,24 @@ body {
 	font-weight: 400;
 	color: #fff;
 }
+body {
+	&.lock {
+		overflow: hidden;
+	}
+}
+a {
+	color: #fff;
+}
 // ==============================================================================================================================================
 
 // ==============================================================================================================================================
-.container {
-	max-width: 1170px;
-	margin: 0 auto;
-	padding: 0 15px;
-}
+
 
 .wrapper {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	padding: 80px;
-	&.loaded {
-	}
+	padding: toVw(80px);
 }
 // ===============================================================================================================================================
 .section {
@@ -40,41 +64,47 @@ body {
 	position: relative;
 }
 .title {
+	@include adaptiv-font(35, 14);
+	letter-spacing: toVw(2px);
+	line-height: toVw(45px);
+	text-align: left;
+	text-transform: uppercase;
 }
 .btn {
 	@include adaptiv-font(20, 14);
 	padding: 25px 35px;
 	font-weight: 700;
-	letter-spacing: 0.8px;
+	letter-spacing: toVw(.8px);
 	text-align: center;
 	text-transform: uppercase;
 	background: transparent;
 	color: #fff;
-	border: 4px solid;
+	border: 4px solid #fff;
 	transition: all 0.7s;
+
+	&:hover {
+		background-color: #fff;
+		color: #000;
+	}
+}
+.btn-down {
+	width: toVw(80px);
+	height: toVw(80px);
+	// position: relative;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	cursor: pointer;
+	transition: all 0.7s;
+	position: absolute;
+	right: toVw(80px);
+	bottom: toVw(80px);
+	
+
 
 
 	&:hover {
 		background-color: #fff;
-
-		span {
-			display: block;
-			transition: all 0.7s;
-			color: #000;
-		}
-	}
-}
-.btn-down {
-	width: 80px;
-	height: 80px;
-	position: relative;
-	border-radius: 50%;
-	border: 4px solid #fff;
-	cursor: pointer;
-	transition: all .7s;
-	&:hover{
-		background-color: #fff;
-		&:before{
+		&:before {
 			color: #000;
 		}
 	}
@@ -82,14 +112,12 @@ body {
 		content: "\f103";
 		position: absolute;
 		font-family: "icomoon";
-		font-size: 60px;
+		@include adaptiv-font(60, 40);
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	transition: all .7s;
-
+		transition: all 0.7s;
 	}
-
 }
 
 // ===============================================================================================================================================
