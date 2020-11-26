@@ -4,7 +4,6 @@ $fontfamily: "Gotham Pro";
 @import "_normalize.scss";
 @import "_null.scss";
 @import "_ui.scss";
-
 @import "_icomoon.scss";
 @import "_fonts.scss";
 @import "_global.scss";
@@ -98,11 +97,6 @@ $fontfamily: "Gotham Pro";
     transition: all 0.5s;
     &.open {
         transform: translateX(0);
-    }
-
-    // .menu__list
-
-    &__list {
     }
 
     // .menu__item
@@ -227,16 +221,6 @@ $fontfamily: "Gotham Pro";
         line-height: 35px;
         text-align: left;
     }
-
-    // .promo__btn
-
-    &__btn {
-    }
-
-    // .promo__btn-down
-
-    &__btn-down {
-    }
 }
 
 // =============================================================================================================================================
@@ -332,11 +316,6 @@ $fontfamily: "Gotham Pro";
         }
     }
 
-    // .models__content
-
-    &__content {
-    }
-
     // .models__content-item
 
     &__content-item {
@@ -374,14 +353,7 @@ $fontfamily: "Gotham Pro";
     &__content-title {
         font-weight: 700;
     }
-
-    // .models__content-btn
-
-    &__content-btn {
-    }
-    &__btn-down {
-    }
-}
+  
 
 // =============================================================================================================================================
 
@@ -546,20 +518,72 @@ $fontfamily: "Gotham Pro";
 // =============================================================================================================================================
 
 .club {
-}
-.grid {
-}
-.grid-item {
-    width: 16.666%;
-}
-.grid-item--width2 {
-    width: 33.333%;
+    &__title {
+        color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        margin: 30px 0px 10px 0px;
+    }
+    // .club__wrapper
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // .club__wrapper-inner
+
+    &__wrapper-inner {
+        width: 33.333%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // .club__wrapper-item
+
+    &__wrapper-item {
+        width: 50%;
+        padding: toVw(10px);
+        position: relative;
+
+        &:hover {
+            .club__wrapper-popup {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    // .club__wrapper-item-big
+
+    &__wrapper-item-big {
+        width: 100%;
+        position: relative;
+    }
+
+    // .club__wrapper-popup
+
+    &__wrapper-popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: toVw(30px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;
+        transition: all 0.5s;
+    }
 }
 
 // =============================================================================================================================================
 
-// =============================================================================================================================================
-
-// =============================================================================================================================================
 
 @import "_medias.scss";
