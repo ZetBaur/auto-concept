@@ -353,7 +353,7 @@ $fontfamily: "Gotham Pro";
     &__content-title {
         font-weight: 700;
     }
-  
+}
 
 // =============================================================================================================================================
 
@@ -481,7 +481,6 @@ $fontfamily: "Gotham Pro";
     &__item-text {
         color: #000000;
         margin-bottom: toVh(30px);
-
         line-height: toVh(35px);
         text-align: left;
     }
