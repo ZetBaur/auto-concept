@@ -15,6 +15,14 @@ $('.wrapper').addClass('loaded');
 if(isMobile.iOS()){
 	var act="touchstart";
 }
+// ================================================================================
+$('.grid').isotope({
+	// options
+	itemSelector: '.grid-item',
+	layoutMode: 'fitRows'
+  });
+
+
 // ==================MENU=========================================================================
 
 
