@@ -12,8 +12,8 @@ $fontfamily: "Gotham Pro";
 .menu-btn {
     position: fixed;
     background-color: #fff;
-    top: 80px;
-    left: 80px;
+    top: toVw(80px);
+    left: toVw(80px);
     width: 80px;
     height: 80px;
     display: flex;
@@ -83,7 +83,7 @@ $fontfamily: "Gotham Pro";
     position: fixed;
     top: 0;
     left: 0;
-    width: 27%;
+    width: 45%;
     height: 100vh;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.8);
@@ -95,6 +95,7 @@ $fontfamily: "Gotham Pro";
     padding: 12% 3% 5% 3%;
     transform: translateX(-120%);
     transition: all 0.5s;
+    overflow: auto;
     &.open {
         transform: translateX(0);
     }
@@ -217,7 +218,7 @@ $fontfamily: "Gotham Pro";
 
     &__text {
         @include adaptiv-font(20, 14);
-        margin: 0px 0px 40px 0px;
+        margin: 0px 0px toVw(40px) 0px;
         line-height: 35px;
         text-align: left;
     }
@@ -583,6 +584,5 @@ $fontfamily: "Gotham Pro";
 }
 
 // =============================================================================================================================================
-
 
 @import "_medias.scss";

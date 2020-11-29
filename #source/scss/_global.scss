@@ -4,18 +4,10 @@ $maxWidth: 1920;
 	$maxWidth: $maxWidth - 320;
 	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
-// @include adaptiv-font( , );
 // ==============================================================================================================================================
 
 $width: 1920px;
 $height: 1080px;
-
-@function toVmax($px) {
-	@return $px/$width * 100vmax;
-}
-@function toVmin($px) {
-	@return $px/$height * 100vmin;
-}
 
 @function toVw($px) {
 	@return $px/$width * 100vw;
@@ -24,8 +16,6 @@ $height: 1080px;
 @function toVh($px) {
 	@return $px/$height * 100vh;
 }
-// width: toVm($px);
-// ==============================================================================================================================================
 
 // ==============================================================================================================================================
 
@@ -33,7 +23,7 @@ html,
 body {
 	max-width: 1920px;
 	min-width: 320px;
-	@include adaptiv-font(20, 10);
+	@include adaptiv-font(20, 7);
 	font-weight: 400;
 	color: #fff;
 }
@@ -59,7 +49,7 @@ a {
 
 
 .title {
-	@include adaptiv-font(35, 14);
+	@include adaptiv-font(35, 30);
 	letter-spacing: toVw(2px);
 	line-height: toVw(45px);
 	text-align: left;

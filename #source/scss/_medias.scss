@@ -1,28 +1,188 @@
+@media (max-width: 1680px) {
+  .aside-nav {
+    right: 2vw;
+  }
+}
 
+// ================================================================================
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .promo__title.title {
+    line-height: 4vw;
+  }
+  .promo__content {
+    width: 60%;
+  }
+  .models__content-inner {
+    width: 45vw;
+  }
+  .models__content-title {
+    line-height: 4vw;
+  }
+  .accessories__item:nth-child(2),
+  .accessories__item:nth-child(3) {
+    width: 33%;
+  }
+  .accessories__wrapper {
+    padding: 440px 0;
+  }
+  .novelty__item-img {
+    height: auto;
+  }
+  .novelty__item-text {
+    line-height: 1.240741vh;
+  }
+}
+// ================================================================================
+@media (max-width: 768px) and (min-height: 1024px) {
+  .promo__content {
+    width: 80%;
+  }
+  .promo__title {
+    line-height: 5vw;
+  }
+  .models__content-title {
+    line-height: 4vw;
+  }
+  .models__content-inner {
+    width: 100%;
+  }
+  .logo {
+    top: 40px;
+  }
+  .accessories__item:nth-child(2),
+  .accessories__item:nth-child(3) {
+    width: 33.333%;
+  }
+  .accessories__wrapper {
+    align-items: center;
+  }
+  .novelty__item-img {
+    height: auto;
+  }
+}
+// ================================================================================
+@media (max-width: 414px) {
+  .club__title {
+    margin-top: 130px;
+    font-size: 15px;
+  }
+  .logo {
+    top: 20px;
+    width: 150px;
+  }
+  .menu {
+    width: 70%;
+    padding-top: 35%;
+    font-size: 17px;
+  }
+  .btn-down,
+  .aside-nav {
+    display: none;
+  }
+  .promo__content {
+    width: 100%;
+  }
+  .title {
+    line-height: 29px;
+  }
+  .promo__text {
+    font-size: 25px;
+  }
+  .models__nav-title {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .models__tabs {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .models__nav {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .models__nav-item:before {
+    left: 0;
+    width: 100%;
+  }
+  .models__nav-item {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
+  }
+  .models__content-item {
+    width: 100%;
+    transform: translateX(0);
+  }
+  .models__content-inner {
+    width: 100%;
+  }
+  .accessories__wrapper {
+    flex-direction: column;
+    padding-top: 100px;
+    height: 100%;
+  }
 
-@media (max-width: 1170px){
-    .container{
-		max-width: 970px;
-
+  .accessories__item:nth-child(1) {
+    flex: 1 0;
+  }
+  .accessories__item:nth-child(1),
+  .accessories__item:nth-child(2),
+  .accessories__item:nth-child(3),
+  .accessories__item:nth-child(4),
+  .accessories__item:nth-child(5),
+  .accessories__item:nth-child(6) {
+    width: 100%;
+    max-height: 18%;
+    overflow: hidden;
+  }
+  .novelty__wrapper {
+    flex-direction: column;
+  }
+  .novelty__item {
+    width: 100%;
+    margin-bottom: 10px;
+    &:nth-child(2) {
+      display: none;
     }
-      
+  }
+  .novelty__item-inner {
+    line-height: 10px;
+    width: 100%;
+    font-size: 10px;
+  }
+  .novelty__item-img {
+    height: auto;
+  }
+  .novelty__item-text {
+    line-height: 3vw;
+  }
+  .novelty__item-title {
+    margin-bottom: 1vw;
+  }
+  .club__wrapper-inner {
+    width: 50%;
+  }
+}
+// ================================================================================
+@media (max-width: 375px) {
+  .promo__text,
+  .promo__title {
+    font-size: 15px;
+  }
+  .models__nav-title {
+    display: none;
+  }
+  .novelty__item-img {
+    height: 160px;
+    overflow: hidden;
+  }
+  .logo {
+    top: 45px;
+    width: 100px;
+  }
 }
 
-@media (max-width: 992.98px){
-    .container{
-		max-width: 750px;
-
-    }
-      
-}
-@media (max-width: 767.98px){
-    .container{
-		max-width: none;
-
-    }
-      
-}
-@media (max-width: 479.98px){
-   
-      
-}
